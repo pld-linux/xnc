@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.xnc.dubna.su/src/xnc-4.4.7.src.tar.gz
+# Source0-md5:	5f6a6a95aa83c35268c2d339bbd3ef83
 Patch0:		%{name}-configure.patch
 Patch1:		%{name}-destdir.patch
 URL:		http://www.xnc.dubna.su/
