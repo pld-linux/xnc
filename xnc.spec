@@ -1,15 +1,15 @@
-Summary:	xnc is a file manager for Linux
-Summary(pl):	xnc jest zarz±dc± plików dla Linuksa
+Summary:	xnc - a file manager for Linux
+Summary(pl):	xnc - zarz±dca plików dla Linuksa
 Name:		xnc
-Version:	5.0.2
+Version:	5.0.4
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.xnc.dubna.su/src-5/%{name}-%{version}.src.tar.gz
-# Source0-md5:	d702945813df0e483bf4c0630cfc355a
-Patch0:		%{name}-configure.patch
-Patch1:		%{name}-Makefile_in.patch
+# Source0-md5:	62446cdfdf5730f125fb351a658c0bd3
+Patch0:		%{name}-Makefile_in.patch
 URL:		http://www.xnc.dubna.su/
+BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -30,13 +30,15 @@ xnc jest zarz±dc± plików dla Linuksa.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
+
+mv -f po/{sr,sr@Latn}.po
+mv -f po/{sp,sr}.po
+%{__perl} -pi -e 's/sr sp/sr sr\@Latn/' po/LINGUAS
 
 rm -rf jpeg
 
 %build
 cp -f /usr/share/automake/config.sub .
-rm -f missing
 %{__gettextize}
 %{__aclocal}
 %{__autoconf}
@@ -48,8 +50,7 @@ rm -f missing
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	INSTMAN=%{_mandir}/man1
+	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{name}
 
