@@ -8,6 +8,7 @@ Group:		X11/Applications
 Source0:	http://www.xnc.dubna.su/src-5/%{name}-%{version}.src.tar.gz
 # Source0-md5:	d702945813df0e483bf4c0630cfc355a
 Patch0:		%{name}-configure.patch
+Patch1:		%{name}-Makefile_in.patch
 URL:		http://www.xnc.dubna.su/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -28,12 +29,14 @@ xnc jest zarz±dc± plików dla Linuksa.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 rm -rf jpeg
 
 %build
 cp -f /usr/share/automake/config.sub .
 rm -f missing
+%{__gettextize}
 %{__aclocal}
 %{__autoconf}
 %configure
