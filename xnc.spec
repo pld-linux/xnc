@@ -32,6 +32,7 @@ xnc jest zarz±dc± plików dla Linuksa.
 rm -rf jpeg
 
 %build
+cp -f /usr/share/automake/config.sub .
 rm -f missing
 %{__aclocal}
 %{__autoconf}
