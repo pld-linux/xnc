@@ -5,7 +5,7 @@ Version:	5.0.2
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://www.xnc.dubna.su/src/%{name}-%{version}.src.tar.gz
+Source0:	http://www.xnc.dubna.su/src-5/%{name}-%{version}.src.tar.gz
 # Source0-md5:	d702945813df0e483bf4c0630cfc355a
 Patch0:		%{name}-configure.patch
 URL:		http://www.xnc.dubna.su/
