@@ -1,0 +1,11 @@
+--- xnc-5.0.2/Makefile.in~	2003-02-04 13:52:38.000000000 +0100
++++ xnc-5.0.2/Makefile.in	2004-04-07 18:26:27.615837784 +0200
+@@ -39,7 +39,7 @@
+ 	@echo "Skipping..."
+ 
+ compile-po:
+-	cd po && make compile
++	cd po && make
+ 
+ config:	FORCE
+ 	./configure
