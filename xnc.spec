@@ -2,12 +2,13 @@ Summary:	xnc - a file manager for Linux
 Summary(pl):	xnc - zarz±dca plików dla Linuksa
 Name:		xnc
 Version:	5.0.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.xnc.dubna.su/src-5/%{name}-%{version}.src.tar.gz
 # Source0-md5:	62446cdfdf5730f125fb351a658c0bd3
 Patch0:		%{name}-Makefile_in.patch
+Patch1:		%{name}-desktop.patch
 URL:		http://www.xnc.dubna.su/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
@@ -30,6 +31,7 @@ xnc jest zarz±dc± plików dla Linuksa.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 mv -f po/{sr,sr@Latn}.po
 mv -f po/{sp,sr}.po
