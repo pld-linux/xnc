@@ -1,19 +1,20 @@
 Summary:	xnc is a file manager for Linux
 Summary(pl):	xnc jest zarz±dc± plików dla Linuksa
 Name:		xnc
-Version:	4.4.7
+Version:	5.0.2
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://www.xnc.dubna.su/src/xnc-4.4.7.src.tar.gz
-# Source0-md5:	5f6a6a95aa83c35268c2d339bbd3ef83
+Source0:	http://www.xnc.dubna.su/src/%{name}-%{version}.src.tar.gz
+# Source0-md5:	d702945813df0e483bf4c0630cfc355a
 Patch0:		%{name}-configure.patch
-Patch1:		%{name}-destdir.patch
-Patch2:		%{name}-gcc33.patch
 URL:		http://www.xnc.dubna.su/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libjpeg-devel
+BuildRequires:	libpng-devel
+BuildRequires:	libstdc++-devel
+BuildRequires:	libtiff-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/X11
@@ -27,8 +28,6 @@ xnc jest zarz±dc± plików dla Linuksa.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
 
 rm -rf jpeg
 
@@ -45,14 +44,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	INSTMAN=%{_mandir}
+	INSTMAN=%{_mandir}/man1
+
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS README TODO WHATS_NEW
+%doc AUTHORS README* TODO WHATS_NEW
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/xnc
 %{_mandir}/man1/*
+%{_desktopdir}/*
+%{_pixmapsdir}/*
