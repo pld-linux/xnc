@@ -1,0 +1,28 @@
+diff -urN xnc-5.0.4.orig/desktop/xnc-gnome2.desktop xnc-5.0.4/desktop/xnc-gnome2.desktop
+--- xnc-5.0.4.orig/desktop/xnc-gnome2.desktop	2004-12-10 13:48:09.000000000 +0100
++++ xnc-5.0.4/desktop/xnc-gnome2.desktop	2004-12-10 15:41:41.426311600 +0100
+@@ -1,17 +1,15 @@
+ [Desktop Entry]
+-Name=XNC
+-Comment=Graphical File manager, X Northern Captain
+-Name[en_US.ISO8859-1]=X Northern Captain
+-Comment[en_US.ISO8859-1]=Graphical File Manager
+-Name[ru_RU.koi8r]=Северный капитан (XNC)
+-Name[ru_RU.KOI8-R]=Северный капитан (XNC)
+-Comment[ru_RU.koi8r]=Графический файл менеджер (XNC)
+-Comment[ru_RU.KOI8-R]=Графический файл менеджер (XNC)
++Name=X Northern Captain
++Comment=Graphical File Manager
++Comment[pl]=Graficzny zarzд┘dca plikцЁw
++Name[ru]=п║п╣п╡п╣я─п╫я▀п╧ п╨п╟п©п╦я┌п╟п╫ (XNC)
++Comment[ru]=п⌠я─п╟я└п╦я┤п╣я│п╨п╦п╧ я└п╟п╧п╩ п╪п╣п╫п╣п╢п╤п╣я─ (XNC)
+ Exec=xnc
+ Icon=xnc.png
+ Type=Application
+ X-GNOME-DocPath=/usr/share/doc/xnc-5.0.0/index.html
+-Categories=Application;System;Utility;X-Red-Hat-Base;
++Categories=Utility;FileManager;
+ Encoding=UTF-8
+ X-Desktop-File-Install-Version=0.3
+ OnlyShowIn=GNOME;
++# vi: encoding=utf-8
