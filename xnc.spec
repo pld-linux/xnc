@@ -12,6 +12,7 @@ Patch1:		%{name}-Makefile_in.patch
 URL:		http://www.xnc.dubna.su/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libstdc++-devel
