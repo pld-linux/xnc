@@ -30,8 +30,8 @@ xnc jest zarządcą plików dla Linuksa.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 mv -f po/{sr,sr@Latn}.po
 mv -f po/{sp,sr}.po
